@@ -306,8 +306,10 @@ void backup_file_set_flag(backup_file_t * bfile, unsigned char flag)
 int backup_file_get_record_data(backup_file_t * bfile, unsigned char **data,
                                 unsigned int *size)
 {
-    if (!bfile)
-        return;
+    if (!bfile) {
+        ERROR("%s: ERROR: bfile == NULL\n", __func__);
+        return -1;
+    }
     if (!bfile->mbdb_record) {
         ERROR("%s: ERROR: no mbdb_record present\n", __func__);
         return -1;

@@ -1,5 +1,6 @@
 AM_CFLAGS =	                   \
 	$(GLOBAL_CFLAGS)           \
+	$(OPENSSL_CFLAGS)          \
 	$(libimobiledevice_CFLAGS) \
 	$(libplist_CFLAGS)         \
 	$(libzip_CFLAGS)           \
@@ -7,6 +8,7 @@ AM_CFLAGS =	                   \
 
 AM_LDFLAGS =\
 	$(AC_LDFLAGS)              \
+	$(OPENSSL_LIBS)            \
 	$(libimobiledevice_LIBS)   \
 	$(libplist_LIBS)           \
 	$(libzip_LIBS)             \
